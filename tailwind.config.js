@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'blue': '#007bff',
+        'mBlue': '#007bff',
+        'bodyBg': '#fafafa'
       }
     },
   },

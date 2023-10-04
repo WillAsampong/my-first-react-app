@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 const Home = () => {
@@ -24,35 +27,41 @@ const [users, setUsers] = useState([]);
 
   return (
     <div className="home">
-        <h1>List Of Users</h1>
-        <div className="table">
-            <div className="heading">
-                <h3>Search User</h3>
-                <div className="underline"></div>
+        <div className="p-12 h-full">
+            <div className="heading mb-6">
+                <h1 className="text-3xl font-bold text-mBlue">List Of Users</h1>
+                <div className="underline border-2 w-20 border-mBlue"></div>
             </div>
-            <div className="search-input">
-                <input type="text" placeholder="search user..."/>
+            <div className="table  h-2/3 p-8 pl-0">
+                <div className="search-heading flex">
+                    <FontAwesomeIcon icon={faUser} className="text-3xl text-mBlue mr-8"/>
+                    <h3 className="text-2xl font-bold text-mBlue mb-4">Search User</h3>
+                </div>
+                <div className="search-input h-10 w-full mb-8">
+                    <input type="text" placeholder="search user..." className="h-full mr-6 border outline-mBlue w-3/4 p-6"/>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="text-mBlue text-lg"/>
+                </div>
+                <table className='p-12'>
+                    <thead className="p-8 h-8 bg-mBlue text-white text-left">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody className="p-8">
+                        {
+                            users.map((user) => (
+                                <tr key={user.id} className="p-8">
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.phone}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
             </div>
-            <table className=''>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        users.map((user) => (
-                            <tr key={user.id}>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{user.phone}</td>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
         </div>
     </div>
   )

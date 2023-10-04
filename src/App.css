@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  /* outline: 2px solid red; */
+  outline: 2px solid red;
 }
 
 body {
@@ -32,7 +32,7 @@ body {
 
 .logo a{
   font-weight: 700;
-  color: rgb(3, 3, 118);
+  color: #007bff;
   margin-left: 30px;
   text-decoration: none;
 }
@@ -41,7 +41,7 @@ body {
   padding-left: 25px;
   list-style-type: none;
   cursor: pointer;
-  color: #3066be;
+  color: #007bff;
 }
 
 .home {
